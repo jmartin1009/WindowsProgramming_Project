@@ -1,0 +1,14 @@
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\bin\Debug\DrinksProject.exe.config
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\bin\Debug\DrinksProject.exe
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\bin\Debug\DrinksProject.pdb
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\bin\Debug\DrinksProject.xml
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.vbprojAssemblyReference.cache
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.ChangePassword.resources
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.Login.resources
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.Resources.resources
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.Register.resources
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.vbproj.GenerateResource.cache
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.vbproj.CoreCompileInputs.cache
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.exe
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.xml
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.pdb
