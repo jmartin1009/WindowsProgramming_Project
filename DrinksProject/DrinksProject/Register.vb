@@ -7,6 +7,7 @@
             tbPassword.Clear()
             tbConfirm.Clear()
         Else
+            'Check if PIN is only numbers
             'Check if user already exists
             'Add user if not
         End If
@@ -16,5 +17,15 @@
         Dim login = New Login()
         Me.Hide()
         login.Show()
+    End Sub
+
+    Private Sub HomeMenu_Click(sender As Object, e As EventArgs) Handles HomeMenu.Click
+        Dim login As Login = New Login()
+        login.Show()
+        Me.Finalize()
+    End Sub
+
+    Private Sub ExitMenu_Click(sender As Object, e As EventArgs) Handles ExitMenu.Click
+        Application.Exit()
     End Sub
 End Class

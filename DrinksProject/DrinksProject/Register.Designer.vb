@@ -33,6 +33,10 @@ Partial Class Register
         Me.tbPIN = New System.Windows.Forms.TextBox()
         Me.btnRegister = New System.Windows.Forms.Button()
         Me.btnReturn = New System.Windows.Forms.Button()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.HomeMenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitMenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'LabelCreate
@@ -133,18 +137,41 @@ Partial Class Register
         'btnReturn
         '
         Me.btnReturn.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReturn.Location = New System.Drawing.Point(663, 27)
+        Me.btnReturn.Location = New System.Drawing.Point(663, 31)
         Me.btnReturn.Name = "btnReturn"
         Me.btnReturn.Size = New System.Drawing.Size(93, 29)
         Me.btnReturn.TabIndex = 10
         Me.btnReturn.Text = "Return"
         Me.btnReturn.UseVisualStyleBackColor = True
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HomeMenu, Me.ExitMenu})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(800, 28)
+        Me.MenuStrip1.TabIndex = 11
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'HomeMenu
+        '
+        Me.HomeMenu.Name = "HomeMenu"
+        Me.HomeMenu.Size = New System.Drawing.Size(64, 24)
+        Me.HomeMenu.Text = "Home"
+        '
+        'ExitMenu
+        '
+        Me.ExitMenu.Name = "ExitMenu"
+        Me.ExitMenu.Size = New System.Drawing.Size(47, 24)
+        Me.ExitMenu.Text = "Exit"
+        '
         'Register
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.btnReturn)
         Me.Controls.Add(Me.btnRegister)
         Me.Controls.Add(Me.tbPIN)
@@ -158,6 +185,8 @@ Partial Class Register
         Me.Controls.Add(Me.LabelCreate)
         Me.Name = "Register"
         Me.Text = "Register"
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -174,4 +203,7 @@ Partial Class Register
     Friend WithEvents tbPIN As TextBox
     Friend WithEvents btnRegister As Button
     Friend WithEvents btnReturn As Button
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents HomeMenu As ToolStripMenuItem
+    Friend WithEvents ExitMenu As ToolStripMenuItem
 End Class

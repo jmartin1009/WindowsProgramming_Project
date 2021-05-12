@@ -28,6 +28,10 @@ Partial Class Login
         Me.btnLogin = New System.Windows.Forms.Button()
         Me.btnRegister = New System.Windows.Forms.Button()
         Me.btnChangePW = New System.Windows.Forms.Button()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.HomeMenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitMenu = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'LabelLogin
@@ -88,6 +92,28 @@ Partial Class Login
         Me.btnChangePW.Text = "Change Password"
         Me.btnChangePW.UseVisualStyleBackColor = True
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HomeMenu, Me.ExitMenu})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(800, 28)
+        Me.MenuStrip1.TabIndex = 6
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'HomeMenu
+        '
+        Me.HomeMenu.Name = "HomeMenu"
+        Me.HomeMenu.Size = New System.Drawing.Size(64, 26)
+        Me.HomeMenu.Text = "Home"
+        '
+        'ExitMenu
+        '
+        Me.ExitMenu.Name = "ExitMenu"
+        Me.ExitMenu.Size = New System.Drawing.Size(47, 24)
+        Me.ExitMenu.Text = "Exit"
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -99,8 +125,12 @@ Partial Class Login
         Me.Controls.Add(Me.tbPassword)
         Me.Controls.Add(Me.tbUsername)
         Me.Controls.Add(Me.LabelLogin)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Login"
         Me.Text = "Login"
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -112,4 +142,7 @@ Partial Class Login
     Friend WithEvents btnLogin As Button
     Friend WithEvents btnRegister As Button
     Friend WithEvents btnChangePW As Button
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents HomeMenu As ToolStripMenuItem
+    Friend WithEvents ExitMenu As ToolStripMenuItem
 End Class
