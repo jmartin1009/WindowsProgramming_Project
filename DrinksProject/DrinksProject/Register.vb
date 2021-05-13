@@ -15,7 +15,7 @@
 
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         Dim login = New Login()
-        Me.Hide()
+        Me.Finalize()
         login.Show()
     End Sub
 

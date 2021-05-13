@@ -16,14 +16,15 @@
         ElseIf (tbPassword.Text <> tbConfirm.Text) Then
             MessageBox.Show("Passwords do not match")
         Else
-
+            'check if PIN is 4 numbers
+            'check if PIN matches, if so, change password
         End If
 
     End Sub
 
     Private Sub btnReturn_Click(sender As Object, e As EventArgs) Handles btnReturn.Click
         Dim login = New Login()
-        Me.Hide()
+        Me.Finalize()
         login.Show()
     End Sub
 
