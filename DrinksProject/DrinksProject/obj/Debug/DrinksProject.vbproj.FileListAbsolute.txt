@@ -35,3 +35,17 @@ D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\
 D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.xml
 D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.pdb
 D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.vbprojAssemblyReference.cache
+C:\Users\Benjy\Downloads\Coding Notes & Programs\CS3340 Windows (VB)\VB Programs\Windows Group Programs\Group Program Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.vbprojAssemblyReference.cache
+C:\Users\Benjy\Downloads\Coding Notes & Programs\CS3340 Windows (VB)\VB Programs\Windows Group Programs\Group Program Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.AdminView.resources
+C:\Users\Benjy\Downloads\Coding Notes & Programs\CS3340 Windows (VB)\VB Programs\Windows Group Programs\Group Program Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.BartenderView.resources
+C:\Users\Benjy\Downloads\Coding Notes & Programs\CS3340 Windows (VB)\VB Programs\Windows Group Programs\Group Program Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.ChangePassword.resources
+C:\Users\Benjy\Downloads\Coding Notes & Programs\CS3340 Windows (VB)\VB Programs\Windows Group Programs\Group Program Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.CustomerView.resources
+C:\Users\Benjy\Downloads\Coding Notes & Programs\CS3340 Windows (VB)\VB Programs\Windows Group Programs\Group Program Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.Login.resources
+C:\Users\Benjy\Downloads\Coding Notes & Programs\CS3340 Windows (VB)\VB Programs\Windows Group Programs\Group Program Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.Resources.resources
+C:\Users\Benjy\Downloads\Coding Notes & Programs\CS3340 Windows (VB)\VB Programs\Windows Group Programs\Group Program Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.NewItem.resources
+C:\Users\Benjy\Downloads\Coding Notes & Programs\CS3340 Windows (VB)\VB Programs\Windows Group Programs\Group Program Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.Register.resources
+C:\Users\Benjy\Downloads\Coding Notes & Programs\CS3340 Windows (VB)\VB Programs\Windows Group Programs\Group Program Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.vbproj.GenerateResource.cache
+C:\Users\Benjy\Downloads\Coding Notes & Programs\CS3340 Windows (VB)\VB Programs\Windows Group Programs\Group Program Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.vbproj.CoreCompileInputs.cache
+C:\Users\Benjy\Downloads\Coding Notes & Programs\CS3340 Windows (VB)\VB Programs\Windows Group Programs\Group Program Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.exe
+C:\Users\Benjy\Downloads\Coding Notes & Programs\CS3340 Windows (VB)\VB Programs\Windows Group Programs\Group Program Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.xml
+C:\Users\Benjy\Downloads\Coding Notes & Programs\CS3340 Windows (VB)\VB Programs\Windows Group Programs\Group Program Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.pdb

@@ -94,6 +94,10 @@
     <Compile Include="ChangePassword.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Admin.vb" />
+    <Compile Include="Bartender.vb" />
+    <Compile Include="Customer.vb" />
+    <Compile Include="Person.vb" />
     <Compile Include="CustomerView.Designer.vb">
       <DependentUpon>CustomerView.vb</DependentUpon>
     </Compile>
