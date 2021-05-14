@@ -1,12 +1,15 @@
 ﻿Imports System.Data.OleDb
+Imports System.Data.SqlClient
+
 Public Module Class1
     Private conFlag As Boolean = False
+    'Private conString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\EmployeeDB.mdb"
     Private con As OleDbConnection = New OleDbConnection
 
     'Checks connection to database, only opens connection if connection flag indicates a connection has not been made
-    Public Sub connectionCheck(filePath As String)
+    Public Sub connectionCheck(conString As String)
         Try
-            Dim conString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\EmployeeDB.mdb"
+            'Dim conString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=#"
             'conString = conString.Replace("#", filePath)
             If con.State = ConnectionState.Open Then
                 If con.ConnectionString <> conString Then
@@ -17,10 +20,11 @@ Public Module Class1
             If (conFlag = False) Then
                 con = New OleDbConnection(conString)
                 con.Open()
+                con.Close()
                 conFlag = True
             End If
             If Not (con.State = ConnectionState.Open) Then
-                Throw New Exception("Database Connection failed")
+                'Throw New Exception("Database Connection failed")
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -83,5 +87,33 @@ Public Module Class1
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Public Function fnLogin(userName As String, userPassword As String, conString As String)
+        Dim con = New OleDbConnection(conString)
+        Dim cmd As New OleDb.OleDbCommand
+        Dim dt As New DataTable
+        Dim da As New OleDb.OleDbDataAdapter(cmd)
+        Try
+
+            Dim sql As String = "SELECT User_Type_ID FROM Users WHERE Username = '" & userName & "' AND Password = '" & userPassword & "' "
+
+            cmd.Connection = con
+            cmd.CommandText = sql
+            con.Open()
+
+
+            da.Fill(dt)
+
+            If dt.Rows.Count > 0 Then
+                Return dt
+            Else
+                Return dt
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Function
 
 End Module

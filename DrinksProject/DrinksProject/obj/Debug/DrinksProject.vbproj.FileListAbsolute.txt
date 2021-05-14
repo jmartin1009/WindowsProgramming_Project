@@ -13,3 +13,25 @@ C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\
 C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.xml
 C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.pdb
 C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.AdminView.resources
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\bin\Debug\DrinksProject.exe.config
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\bin\Debug\DrinksProject.exe
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\bin\Debug\DrinksProject.pdb
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\bin\Debug\DrinksProject.xml
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\bin\Debug\Project_DLL.dll
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\bin\Debug\Project_DLL.pdb
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\bin\Debug\Project_DLL.xml
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.AdminView.resources
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.BartenderView.resources
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.ChangePassword.resources
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.CustomerView.resources
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.Login.resources
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.Resources.resources
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.NewItem.resources
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.Register.resources
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.vbproj.GenerateResource.cache
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.vbproj.CoreCompileInputs.cache
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.vbproj.CopyComplete
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.exe
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.xml
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.pdb
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DrinksProject\DrinksProject\obj\Debug\DrinksProject.vbprojAssemblyReference.cache

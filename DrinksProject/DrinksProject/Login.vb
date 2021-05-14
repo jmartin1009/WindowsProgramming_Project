@@ -1,8 +1,25 @@
 ﻿Public Class Login
+    Public Property con As New String("Provider = Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\DrinksProjectDB.mdb")
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Project_DLL.connectionCheck(con)
+    End Sub
+
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         If (tbUsername.Text = "" Or tbPassword.Text = "" Or tbUsername.Text = "Username" Or tbPassword.Text = "Password") Then
             MessageBox.Show("Please enter a username and password.")
             Return
+        Else
+            Dim checkLogin As DataTable = Project_DLL.fnLogin(tbUsername.Text, tbPassword.Text, con)
+            If checkLogin.Rows(0).ItemArray.Contains(1) Then
+                'ADMIN
+            ElseIf checkLogin.Rows(0).ItemArray.Contains(2) Then
+                'BARETENDER
+            ElseIf checkLogin.Rows(0).ItemArray.Contains(3) Then
+                'CUSTOMER
+            Else
+                'DA DUDE DON'T EXIST, GIVE EM THE BOOT
+            End If
+
         End If
 
     End Sub
