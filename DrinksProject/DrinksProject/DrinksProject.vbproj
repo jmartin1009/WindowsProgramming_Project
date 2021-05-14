@@ -79,10 +79,22 @@
     <Compile Include="AdminView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BartenderView.Designer.vb">
+      <DependentUpon>BartenderView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BartenderView.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ChangePassword.Designer.vb">
       <DependentUpon>ChangePassword.vb</DependentUpon>
     </Compile>
     <Compile Include="ChangePassword.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerView.Designer.vb">
+      <DependentUpon>CustomerView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerView.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.vb">
@@ -124,8 +136,14 @@
     <EmbeddedResource Include="AdminView.resx">
       <DependentUpon>AdminView.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BartenderView.resx">
+      <DependentUpon>BartenderView.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChangePassword.resx">
       <DependentUpon>ChangePassword.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerView.resx">
+      <DependentUpon>CustomerView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
