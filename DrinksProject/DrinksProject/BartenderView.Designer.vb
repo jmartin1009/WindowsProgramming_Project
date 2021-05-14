@@ -145,7 +145,7 @@ Partial Class BartenderView
         Me.Controls.Add(Me.btnManageInv)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "BartenderView"
-        Me.Text = "AdminView"
+        Me.Text = "BartenderView"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
