@@ -6,8 +6,8 @@ Public Module Class1
     'Checks connection to database, only opens connection if connection flag indicates a connection has not been made
     Public Sub connectionCheck(filePath As String)
         Try
-            Dim conString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=#"
-            conString = conString.Replace("#", filePath)
+            Dim conString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\EmployeeDB.mdb"
+            'conString = conString.Replace("#", filePath)
             If con.State = ConnectionState.Open Then
                 If con.ConnectionString <> conString Then
                     conFlag = False
