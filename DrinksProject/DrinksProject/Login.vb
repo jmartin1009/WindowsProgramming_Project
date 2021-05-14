@@ -5,21 +5,27 @@
     End Sub
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
+
         If (tbUsername.Text = "" Or tbPassword.Text = "" Or tbUsername.Text = "Username" Or tbPassword.Text = "Password") Then
             MessageBox.Show("Please enter a username and password.")
             Return
         Else
-            Dim checkLogin As DataTable = Project_DLL.fnLogin(tbUsername.Text, tbPassword.Text, con)
-            If checkLogin.Rows(0).ItemArray.Contains(1) Then
-                'ADMIN
-            ElseIf checkLogin.Rows(0).ItemArray.Contains(2) Then
-                'BARETENDER
-            ElseIf checkLogin.Rows(0).ItemArray.Contains(3) Then
-                'CUSTOMER
-            Else
-                'DA DUDE DON'T EXIST, GIVE EM THE BOOT
-            End If
+            Dim sqlString As String = "SELECT User_Type_ID FROM Users WHERE Username = '" & tbUsername.Text & "' AND Password = '" & tbPassword.Text & "' "
+            Dim checkLogin As DataTable = Project_DLL.fnQuery(sqlString, con)
 
+            If Not checkLogin.Rows.Count = 0 Then
+                If checkLogin.Rows(0).ItemArray.Contains(1) Then
+                    'ADMIN
+                ElseIf checkLogin.Rows(0).ItemArray.Contains(2) Then
+                    'BARETENDER
+                ElseIf checkLogin.Rows(0).ItemArray.Contains(3) Then
+                    'CUSTOMER
+                Else
+                    'DA DUDE DON'T EXIST, GIVE EM THE BOOT
+                End If
+            Else
+                MessageBox.Show("No user with username '" & tbUsername.Text & "' exists. Please try again")
+            End If
         End If
 
     End Sub
@@ -34,7 +40,16 @@
         If (tbUsername.Text = "" Or tbPassword.Text = "" Or tbUsername.Text = "Username") Then
             MessageBox.Show("Please enter a username.")
         Else
-            'Check database for username
+            Dim sqlString As String = "SELECT Username FROM Users WHERE Username = '" & tbUsername.Text & "' "
+            Dim checkLogin As DataTable = Project_DLL.fnQuery(sqlString, con)
+            If checkLogin.Rows(0).ItemArray.Contains(tbUsername.Text) Then
+                MessageBox.Show("Pause")
+                'Continue with pwd change
+            Else
+                MessageBox.Show("User does not exist.")
+            End If
+
+
             Dim change = New ChangePassword()
             change.User = tbUsername.Text
             Me.Hide()

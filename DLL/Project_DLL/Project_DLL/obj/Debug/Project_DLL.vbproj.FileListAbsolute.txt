@@ -7,3 +7,4 @@ D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\
 D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DLL\Project_DLL\Project_DLL\obj\Debug\Project_DLL.dll
 D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DLL\Project_DLL\Project_DLL\obj\Debug\Project_DLL.xml
 D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DLL\Project_DLL\Project_DLL\obj\Debug\Project_DLL.pdb
+D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DLL\Project_DLL\Project_DLL\obj\Debug\Project_DLL.vbprojAssemblyReference.cache

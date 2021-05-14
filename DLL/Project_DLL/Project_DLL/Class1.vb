@@ -88,17 +88,35 @@ Public Module Class1
         End Try
     End Sub
 
-    Public Function fnLogin(userName As String, userPassword As String, conString As String)
+    Public Function fnInsertII(sqlString As String, conString As String)
+        Dim con = New OleDbConnection(conString)
+        Dim cmd As New OleDb.OleDbCommand
+        Try
+            cmd.Connection = con
+            cmd.CommandText = sqlString
+            con.Open()
+
+            Dim check = cmd.ExecuteNonQuery
+            If check < 0 Then
+                Return False
+            Else
+                Return True
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+
+    End Function
+
+    Public Function fnQuery(sqlString As String, conString As String)
         Dim con = New OleDbConnection(conString)
         Dim cmd As New OleDb.OleDbCommand
         Dim dt As New DataTable
         Dim da As New OleDb.OleDbDataAdapter(cmd)
         Try
-
-            Dim sql As String = "SELECT User_Type_ID FROM Users WHERE Username = '" & userName & "' AND Password = '" & userPassword & "' "
-
             cmd.Connection = con
-            cmd.CommandText = sql
+            cmd.CommandText = sqlString
             con.Open()
 
 
