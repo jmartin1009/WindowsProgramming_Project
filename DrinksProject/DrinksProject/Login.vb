@@ -15,16 +15,17 @@
 
             If Not checkLogin.Rows.Count = 0 Then
                 If checkLogin.Rows(0).ItemArray.Contains(1) Then
-                    'ADMIN
+                    MessageBox.Show(tbUsername.Text)
                 ElseIf checkLogin.Rows(0).ItemArray.Contains(2) Then
-                    'BARETENDER
+                    MessageBox.Show(tbUsername.Text)
                 ElseIf checkLogin.Rows(0).ItemArray.Contains(3) Then
-                    'CUSTOMER
-                Else
-                    'DA DUDE DON'T EXIST, GIVE EM THE BOOT
+                    MessageBox.Show(tbUsername.Text)
                 End If
             Else
-                MessageBox.Show("No user with username '" & tbUsername.Text & "' exists. Please try again")
+                MessageBox.Show("Username or password is invalid. Please try again.")
+                tbUsername.Text = ""
+                tbPassword.Text = ""
+                Me.Refresh()
             End If
         End If
 
@@ -44,16 +45,13 @@
             Dim checkLogin As DataTable = Project_DLL.fnQuery(sqlString, con)
             If checkLogin.Rows(0).ItemArray.Contains(tbUsername.Text) Then
                 MessageBox.Show("Pause")
-                'Continue with pwd change
+                Dim changePassword = New ChangePassword
+                changePassword.User = tbUsername.Text
+                Me.Hide()
+                changePassword.Show()
             Else
                 MessageBox.Show("User does not exist.")
             End If
-
-
-            Dim change = New ChangePassword()
-            change.User = tbUsername.Text
-            Me.Hide()
-            change.Show()
         End If
 
 

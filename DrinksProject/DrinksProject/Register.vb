@@ -10,7 +10,7 @@
         Else
             Try
                 Dim pinInt As Int32 = Convert.ToInt32(tbPIN.Text)
-                Dim user_Type_ID As Int32 = 1
+                Dim user_Type_ID As Int32 = 3
 
                 Dim sqlString As String = "SELECT Username FROM Users WHERE Username = '" & tbUsername.Text & "' "
                 Dim checkLogin As DataTable = Project_DLL.fnQuery(sqlString, con)
