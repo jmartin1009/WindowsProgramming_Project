@@ -104,9 +104,28 @@ Public Module Class1
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
+            Return False
         End Try
+    End Function
 
+    Public Function fnUpdate(sqlString As String, conString As String)
+        Dim con = New OleDbConnection(conString)
+        Dim cmd As New OleDb.OleDbCommand
+        Try
+            cmd.Connection = con
+            cmd.CommandText = sqlString
+            con.Open()
 
+            Dim check = cmd.ExecuteNonQuery
+            If check < 0 Then
+                Return False
+            Else
+                Return True
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
     End Function
 
     Public Function fnQuery(sqlString As String, conString As String)
@@ -118,8 +137,6 @@ Public Module Class1
             cmd.Connection = con
             cmd.CommandText = sqlString
             con.Open()
-
-
             da.Fill(dt)
 
             If dt.Rows.Count > 0 Then
@@ -127,11 +144,9 @@ Public Module Class1
             Else
                 Return dt
             End If
-
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
     End Function
 
 End Module

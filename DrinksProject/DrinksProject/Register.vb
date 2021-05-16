@@ -1,7 +1,7 @@
 ﻿Public Class Register
     Public Property con As New String("Provider = Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\DrinksProjectDB.mdb")
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
-        If (tbUsername.Text = "" Or tbPassword.Text = "" Or tbConfirm.Text = "" Or tbPIN.Text = "") Then
+        If (tbUsername.Text = "" Or tbPassword.Text = "" Or tbConfirm.Text = "" Or tbPIN.Text = "" Or tbPIN.Text.Length < 4) Then
             MessageBox.Show("Please fill out all fields")
         ElseIf (tbPassword.Text <> tbConfirm.Text) Then
             MessageBox.Show("Passwords do not match")

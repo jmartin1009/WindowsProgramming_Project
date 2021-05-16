@@ -43,15 +43,21 @@
         Else
             Dim sqlString As String = "SELECT Username FROM Users WHERE Username = '" & tbUsername.Text & "' "
             Dim checkLogin As DataTable = Project_DLL.fnQuery(sqlString, con)
-            If checkLogin.Rows(0).ItemArray.Contains(tbUsername.Text) Then
-                MessageBox.Show("Pause")
-                Dim changePassword = New ChangePassword
-                changePassword.User = tbUsername.Text
-                Me.Hide()
-                changePassword.Show()
+
+            If Not checkLogin.Rows.Count = 0 Then
+                If checkLogin.Rows(0).ItemArray.Contains(tbUsername.Text) Then
+                    'MessageBox.Show("Pause")
+                    Dim changePassword = New ChangePassword
+                    changePassword.User = tbUsername.Text
+                    Me.Hide()
+                    changePassword.Show()
+                Else
+                    MessageBox.Show("User does not exist, but at line 55")
+                End If
             Else
                 MessageBox.Show("User does not exist.")
             End If
+
         End If
 
 
