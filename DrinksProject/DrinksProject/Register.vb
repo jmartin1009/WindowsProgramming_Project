@@ -18,11 +18,14 @@
                 If checkLogin.Rows.Count = 0 Then
 
                     sqlString = "INSERT INTO Users ([Username], [Password], [User_Type_ID], [User_Pin]) VALUES ('" & tbUsername.Text & "', '" & tbPassword.Text & "', " & user_Type_ID & ", " & pinInt & ")"
-                    Dim userUpdated As Boolean = Project_DLL.fnInsertII(sqlString, con)
+                    Dim userUpdated As Boolean = Project_DLL.fnInsert(sqlString, con)
                     If userUpdated Then
-                        MessageBox.Show("Good")
+                        MessageBox.Show("User was added.")
+                        Dim login = New Login
+                        Me.Finalize()
+                        login.Show()
                     Else
-                        MessageBox.Show("Bad")
+                        MessageBox.Show("Error. User was not added successfully.")
                     End If
                 Else
                     MessageBox.Show("User already exists. Please try again.")

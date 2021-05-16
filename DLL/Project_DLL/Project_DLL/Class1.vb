@@ -74,21 +74,9 @@ Public Module Class1
             MsgBox(ex.Message)
         End Try
     End Sub
-    'Handles adding a row to the table given the inputs from the user
-    Public Sub fnInsert(userID As String, userName As String, userSalary As Integer, userAddress As String, conString As String)
-        connectionCheck(conString)
-        Dim cmd = doCommand("INSERT INTO tblEmployee (empID, empName, empSalary, empAddress) VALUES ('" & userID & "', '" & userName & "', '" & userSalary & "', '" & userAddress & "')")
-        Try
-            Dim check = cmd.ExecuteNonQuery
-            If check < 0 Then
-                Throw New Exception("Query Failed")
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
 
-    Public Function fnInsertII(sqlString As String, conString As String)
+    'Handles inserting data into a given table
+    Public Function fnInsert(sqlString As String, conString As String)
         Dim con = New OleDbConnection(conString)
         Dim cmd As New OleDb.OleDbCommand
         Try
