@@ -1,7 +1,7 @@
 ﻿Public Class ChangePassword
 
     Dim username As String
-    Public Property User() As String
+    Private Property User() As String
         Get
             Return username
         End Get

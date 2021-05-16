@@ -147,7 +147,7 @@ Partial Class CustomerView
         Me.Controls.Add(Me.btnPastOrders)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "CustomerView"
-        Me.Text = "CustomerView"
+        Me.Text = "AdminView"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
