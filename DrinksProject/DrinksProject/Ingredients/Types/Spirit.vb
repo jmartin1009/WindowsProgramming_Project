@@ -6,6 +6,6 @@
     End Sub
 
     Public Overrides Function AddToDrink()
-        Throw New NotImplementedException()
+        Return "A(n) " & Me.portion & " of " & Me.name & " is streamed into the glass"
     End Function
 End Class

@@ -4,6 +4,6 @@
         MyBase.New(name, portion)
     End Sub
     Public Overrides Function AddToDrink()
-        Throw New NotImplementedException()
+        Return "A(n) " & Me.portion & " of " & Me.name & " is added as garnish to the glass"
     End Function
 End Class
