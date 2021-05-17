@@ -1,4 +1,14 @@
 ﻿Public Class CustomerView
+
+    Dim person As Customer
+    Public Property User() As Customer
+        Get
+            Return person
+        End Get
+        Set(ByVal value As Customer)
+            person = value
+        End Set
+    End Property
     Private Sub HomeMenu_Click(sender As Object, e As EventArgs) Handles HomeMenu.Click
         Dim login As Login = New Login()
         login.Show()
@@ -39,6 +49,8 @@
         btnAddItem.Visible = False
         btnOrderDrink.Visible = False
         dgvDrink.Visible = False
+        Me.Text = "" & Me.person.Username & " -- Customer"
+        Me.Refresh()
     End Sub
 
     Private Sub btnMakeDrink_Click(sender As Object, e As EventArgs) Handles btnOrderDrink.Click

@@ -6,7 +6,9 @@
     End Sub
 
     Public Overrides Sub ShowScreen()
-        Throw New NotImplementedException()
+        Dim form As BartenderView = New BartenderView()
+        form.User = Me
+        form.Show()
     End Sub
 
 

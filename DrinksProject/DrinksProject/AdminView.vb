@@ -1,5 +1,15 @@
 ﻿Public Class AdminView
 
+    Dim person As Admin
+    Public Property User() As Admin
+        Get
+            Return person
+        End Get
+        Set(ByVal value As Admin)
+            person = value
+        End Set
+    End Property
+
     Private Sub HomeMenu_Click(sender As Object, e As EventArgs) Handles HomeMenu.Click
         Dim login As Login = New Login()
         login.Show()
@@ -69,6 +79,7 @@
         rbAdmin.Visible = False
         btnAddIngredient.Visible = False
         btnDeleteIngredient.Visible = False
+        Me.Text = "" & Me.person.Username & " -- Admin"
         Me.Refresh()
     End Sub
 

@@ -1,4 +1,14 @@
 ﻿Public Class BartenderView
+
+    Dim person As Bartender
+    Public Property User() As Bartender
+        Get
+            Return person
+        End Get
+        Set(ByVal value As Bartender)
+            person = value
+        End Set
+    End Property
     Private Sub HomeMenu_Click(sender As Object, e As EventArgs) Handles HomeMenu.Click
         Dim login As Login = New Login()
         login.Show()
@@ -48,6 +58,8 @@
         btnAddItem.Visible = False
         btnDeleteOrder.Visible = False
         btnMakeDrink.Visible = False
+        Me.Text = "" & Me.person.Username & " -- Bartender"
+        Me.Refresh()
     End Sub
 
     Private Sub btnDeleteOrder_Click(sender As Object, e As EventArgs) Handles btnDeleteOrder.Click

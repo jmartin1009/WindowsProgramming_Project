@@ -15,11 +15,17 @@
 
             If Not checkLogin.Rows.Count = 0 Then
                 If checkLogin.Rows(0).ItemArray.Contains(1) Then
-                    MessageBox.Show(tbUsername.Text)
+                    Dim user As Admin = New Admin(tbUsername.Text)
+                    Me.Hide()
+                    user.ShowScreen()
                 ElseIf checkLogin.Rows(0).ItemArray.Contains(2) Then
-                    MessageBox.Show(tbUsername.Text)
+                    Dim user As Bartender = New Bartender(tbUsername.Text)
+                    Me.Hide()
+                    user.ShowScreen()
                 ElseIf checkLogin.Rows(0).ItemArray.Contains(3) Then
-                    MessageBox.Show(tbUsername.Text)
+                    Dim user As Customer = New Customer(tbUsername.Text)
+                    Me.Hide()
+                    user.ShowScreen()
                 End If
             Else
                 MessageBox.Show("Username or password is invalid. Please try again.")
