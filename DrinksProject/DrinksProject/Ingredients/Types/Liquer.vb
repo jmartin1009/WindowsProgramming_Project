@@ -1,10 +1,10 @@
 ﻿Public Class Liquer
     Inherits Ingredient
 
-    Public Sub New(name, type, portion)
-        MyBase.New(name, type, portion)
+    Public Sub New(name, portion)
+        MyBase.New(name, portion)
     End Sub
-    Public Overrides Sub AddToDrink()
+    Public Overrides Function AddToDrink()
         Throw New NotImplementedException()
-    End Sub
+    End Function
 End Class

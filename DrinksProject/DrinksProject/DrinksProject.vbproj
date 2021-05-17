@@ -88,9 +88,9 @@
     <Compile Include="BartenderView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Beer.vb" />
-    <Compile Include="Beverage.vb" />
-    <Compile Include="Bitter.vb" />
+    <Compile Include="Ingredients\Types\Beer.vb" />
+    <Compile Include="Ingredients\Types\Beverage.vb" />
+    <Compile Include="Ingredients\Types\Bitter.vb" />
     <Compile Include="ChangePassword.Designer.vb">
       <DependentUpon>ChangePassword.vb</DependentUpon>
     </Compile>
@@ -99,15 +99,15 @@
     </Compile>
     <Compile Include="Admin.vb" />
     <Compile Include="Bartender.vb" />
-    <Compile Include="Condiment.vb" />
+    <Compile Include="Ingredients\Types\Condiment.vb" />
     <Compile Include="Customer.vb" />
-    <Compile Include="Dairy.vb" />
-    <Compile Include="Extract.vb" />
-    <Compile Include="Fruit.vb" />
-    <Compile Include="Herb.vb" />
-    <Compile Include="Ingredient.vb" />
-    <Compile Include="Juice.vb" />
-    <Compile Include="Liquer.vb" />
+    <Compile Include="Ingredients\Types\Dairy.vb" />
+    <Compile Include="Ingredients\Types\Extract.vb" />
+    <Compile Include="Ingredients\Types\Fruit.vb" />
+    <Compile Include="Ingredients\Types\Herb.vb" />
+    <Compile Include="Ingredients\Ingredient.vb" />
+    <Compile Include="Ingredients\Types\Juice.vb" />
+    <Compile Include="Ingredients\Types\Liquer.vb" />
     <Compile Include="Person.vb" />
     <Compile Include="CustomerView.Designer.vb">
       <DependentUpon>CustomerView.vb</DependentUpon>
@@ -149,11 +149,11 @@
     <Compile Include="Register.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Spice.vb" />
-    <Compile Include="Spirit.vb" />
-    <Compile Include="Sweetener.vb" />
-    <Compile Include="Vegetable.vb" />
-    <Compile Include="Wine.vb" />
+    <Compile Include="Ingredients\Types\Spice.vb" />
+    <Compile Include="Ingredients\Types\Spirit.vb" />
+    <Compile Include="Ingredients\Types\Sweetener.vb" />
+    <Compile Include="Ingredients\Types\Vegetable.vb" />
+    <Compile Include="Ingredients\Types\Wine.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AdminView.resx">

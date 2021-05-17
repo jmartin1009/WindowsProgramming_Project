@@ -1,9 +1,9 @@
 ﻿Public Class Beer
     Inherits Ingredient
-    Public Sub New(name, type, portion)
-        MyBase.New(name, type, portion)
+    Public Sub New(name, portion)
+        MyBase.New(name, portion)
     End Sub
-    Public Overrides Sub AddToDrink()
-        Throw New NotImplementedException()
-    End Sub
+    Public Overrides Function AddToDrink()
+
+    End Function
 End Class
