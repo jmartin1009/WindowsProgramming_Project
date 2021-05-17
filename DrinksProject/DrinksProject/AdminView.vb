@@ -23,7 +23,7 @@
 
     Private Sub btnManageUsers_Click(sender As Object, e As EventArgs) Handles btnManageUsers.Click
         'Load datagrid view with all usernames and user types
-        showUsers()
+        showDataTable("SELECT [Username], User_Type FROM Users INNER JOIN User_Types ON Users.User_Type_ID = User_Types.ID")
 
         If (btnAddIngredient.Visible) Then
             btnAddIngredient.Visible = False
@@ -37,15 +37,17 @@
         Me.Refresh()
     End Sub
 
-    Public Sub showUsers()
-        Dim sqlString As String = "SELECT [Username], User_Type FROM Users INNER JOIN User_Types ON Users.User_Type_ID = User_Types.ID"
+    Public Sub showDataTable(sqlString As String)
         Dim checkUpdate As DataTable = Project_DLL.fnQuery(sqlString, con)
         DataGridView1.DataSource = checkUpdate
+        Me.Refresh()
     End Sub
 
 
     Private Sub btnManageIngredients_Click(sender As Object, e As EventArgs) Handles btnManageIngredients.Click
         'Fill datagridview with data
+        showDataTable("SELECT Ingredient_Name, Ingredient_Type_Name FROM Ingredients INNER JOIN Ingredient_Types ON Ingredients.Ingredient_Type_ID = Ingredient_Types.ID")
+
         If (btnDeleteUser.Visible) Then
             btnDeleteUser.Visible = False
             btnChangeType.Visible = False
@@ -55,7 +57,7 @@
         End If
         btnAddIngredient.Visible = True
         btnDeleteIngredient.Visible = True
-        Me.Refresh()
+        'Me.Refresh()
     End Sub
 
     Private Sub btnDeleteUser_Click(sender As Object, e As EventArgs) Handles btnDeleteUser.Click
@@ -63,12 +65,32 @@
             MessageBox.Show("Select a user first.")
         Else
             Dim username As String = DataGridView1.SelectedRows(0).Cells(0).Value.ToString()
-            Dim sqlString As String = "DELETE FROM Users WHERE [Username] ='" & username & "'"
-            Dim checkDelete As Boolean = Project_DLL.fnDelete(sqlString, con)
-            If Not checkDelete Then
-                MessageBox.Show("User was not deleted successfully, please try again. ")
-            End If
-            showUsers()
+            'Dim sqlString As String = "DELETE FROM Users WHERE [Username] ='" & username & "'"
+            delete("DELETE FROM Users WHERE [Username] ='" & username & "'")
+            showDataTable("SELECT [Username], User_Type FROM Users INNER JOIN User_Types ON Users.User_Type_ID = User_Types.ID")
+            Me.Refresh()
+        End If
+    End Sub
+
+    Private Sub btnDeleteIngredient_Click(sender As Object, e As EventArgs) Handles btnDeleteIngredient.Click
+        If (DataGridView1.SelectedCells.Count = 0) Then
+            MessageBox.Show("Select an ingredient first.")
+        Else
+            Dim ingredientName As String = DataGridView1.SelectedRows(0).Cells(0).Value.ToString()
+            delete("DELETE FROM Ingredients WHERE Ingredient_Name ='" & ingredientName & "'")
+            showDataTable("SELECT Ingredient_Name, Ingredient_Type_Name FROM Ingredients INNER JOIN Ingredient_Types ON Ingredients.Ingredient_Type_ID = Ingredient_Types.ID")
+            Me.Refresh()
+        End If
+    End Sub
+
+    Private Sub delete(sqlString As String)
+        Dim checkDelete As Boolean = Project_DLL.fnDelete(sqlString, con)
+        If Not checkDelete Then
+            MessageBox.Show("Deletion not successful, please try again. ")
+        Else
+            DataGridView1.DataSource = Nothing
+            DataGridView1.Rows.Clear()
+            MessageBox.Show("Deletion successful.")
         End If
     End Sub
 
@@ -91,7 +113,7 @@
                 MessageBox.Show("Error changing user type")
             Else
                 MessageBox.Show("User type changed successfully")
-                showUsers()
+                showDataTable("SELECT [Username], User_Type FROM Users INNER JOIN User_Types ON Users.User_Type_ID = User_Types.ID")
             End If
         End If
     End Sub
@@ -113,7 +135,5 @@
 
     End Sub
 
-    Private Sub btnDeleteIngredient_Click(sender As Object, e As EventArgs) Handles btnDeleteIngredient.Click
 
-    End Sub
 End Class
