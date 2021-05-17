@@ -62,7 +62,7 @@
         If (DataGridView1.SelectedCells.Count = 0) Then
             MessageBox.Show("Select a user first.")
         Else
-            Dim username As String = DataGridView1.SelectedCells(0).Value.ToString()
+            Dim username As String = DataGridView1.SelectedRows(0).Cells(0).Value.ToString()
             Dim sqlString As String = "DELETE FROM Users WHERE [Username] ='" & username & "'"
             Dim checkDelete As Boolean = Project_DLL.fnDelete(sqlString, con)
             If Not checkDelete Then
@@ -74,7 +74,7 @@
 
     Private Sub btnChangeType_Click(sender As Object, e As EventArgs) Handles btnChangeType.Click
         Dim sqlString As String
-        Dim username As String = DataGridView1.SelectedCells(0).Value.ToString()
+        Dim username As String = DataGridView1.SelectedRows(0).Cells(0).Value.ToString()
         If (rbAdmin.Checked) Then
             sqlString = "UPDATE Users SET User_Type_ID = '" & 1 & "' WHERE Username = '" & username & "'"
         ElseIf (rbBartender.Checked) Then
