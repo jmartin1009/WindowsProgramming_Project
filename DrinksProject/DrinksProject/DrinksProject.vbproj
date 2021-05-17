@@ -88,6 +88,9 @@
     <Compile Include="BartenderView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Beer.vb" />
+    <Compile Include="Beverage.vb" />
+    <Compile Include="Bitter.vb" />
     <Compile Include="ChangePassword.Designer.vb">
       <DependentUpon>ChangePassword.vb</DependentUpon>
     </Compile>
@@ -96,7 +99,15 @@
     </Compile>
     <Compile Include="Admin.vb" />
     <Compile Include="Bartender.vb" />
+    <Compile Include="Condiment.vb" />
     <Compile Include="Customer.vb" />
+    <Compile Include="Dairy.vb" />
+    <Compile Include="Extract.vb" />
+    <Compile Include="Fruit.vb" />
+    <Compile Include="Herb.vb" />
+    <Compile Include="Ingredient.vb" />
+    <Compile Include="Juice.vb" />
+    <Compile Include="Liquer.vb" />
     <Compile Include="Person.vb" />
     <Compile Include="CustomerView.Designer.vb">
       <DependentUpon>CustomerView.vb</DependentUpon>
@@ -138,6 +149,11 @@
     <Compile Include="Register.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Spice.vb" />
+    <Compile Include="Spirit.vb" />
+    <Compile Include="Sweetener.vb" />
+    <Compile Include="Vegetable.vb" />
+    <Compile Include="Wine.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AdminView.resx">
