@@ -1,4 +1,5 @@
 ﻿Public Class AdminView
+    Public Property con As New String("Provider = Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\DrinksProjectDB.mdb")
 
     Dim person As Admin
     Public Property User() As Admin
@@ -22,6 +23,8 @@
 
     Private Sub btnManageUsers_Click(sender As Object, e As EventArgs) Handles btnManageUsers.Click
         'Load datagrid view with all usernames and user types
+        showUsers()
+
         If (btnAddIngredient.Visible) Then
             btnAddIngredient.Visible = False
             btnDeleteIngredient.Visible = False
@@ -33,6 +36,13 @@
         rbAdmin.Visible = True
         Me.Refresh()
     End Sub
+
+    Public Sub showUsers()
+        Dim sqlString As String = "SELECT [Username], User_Type FROM Users INNER JOIN User_Types ON Users.User_Type_ID = User_Types.ID"
+        Dim checkUpdate As DataTable = Project_DLL.fnQuery(sqlString, con)
+        DataGridView1.DataSource = checkUpdate
+    End Sub
+
 
     Private Sub btnManageIngredients_Click(sender As Object, e As EventArgs) Handles btnManageIngredients.Click
         'Fill datagridview with data
@@ -49,24 +59,40 @@
     End Sub
 
     Private Sub btnDeleteUser_Click(sender As Object, e As EventArgs) Handles btnDeleteUser.Click
-        If (DataGridView1.SelectedRows.Count = 0) Then
+        If (DataGridView1.SelectedCells.Count = 0) Then
             MessageBox.Show("Select a user first.")
         Else
-            Dim username As String = DataGridView1.SelectedRows(0).Cells(0).Value.ToString()
-            'Delete from users/whatever where name = username
+            Dim username As String = DataGridView1.SelectedCells(0).Value.ToString()
+            Dim sqlString As String = "DELETE FROM Users WHERE [Username] ='" & username & "'"
+            Dim checkDelete As Boolean = Project_DLL.fnDelete(sqlString, con)
+            If Not checkDelete Then
+                MessageBox.Show("User was not deleted successfully, please try again. ")
+            End If
+            showUsers()
         End If
     End Sub
 
     Private Sub btnChangeType_Click(sender As Object, e As EventArgs) Handles btnChangeType.Click
+        Dim sqlString As String
+        Dim username As String = DataGridView1.SelectedCells(0).Value.ToString()
         If (rbAdmin.Checked) Then
-            'update user type where
-            Dim username As String = DataGridView1.SelectedRows(0).Cells(0).Value.ToString()
+            sqlString = "UPDATE Users SET User_Type_ID = '" & 1 & "' WHERE Username = '" & username & "'"
         ElseIf (rbBartender.Checked) Then
-            Dim username As String = DataGridView1.SelectedRows(0).Cells(0).Value.ToString()
+            sqlString = "UPDATE Users SET User_Type_ID = '" & 2 & "' WHERE Username = '" & username & "'"
         ElseIf (rbCustomer.Checked) Then
-            Dim username As String = DataGridView1.SelectedRows(0).Cells(0).Value.ToString()
+            sqlString = "UPDATE Users SET User_Type_ID = '" & 3 & "' WHERE Username = '" & username & "'"
         Else
             MessageBox.Show("Please select a role for the user to be changed to.")
+        End If
+
+        If Not String.IsNullOrEmpty(sqlString) Then
+            Dim check As Boolean = Project_DLL.fnUpdate(sqlString, con)
+            If Not check Then
+                MessageBox.Show("Error changing user type")
+            Else
+                MessageBox.Show("User type changed successfully")
+                showUsers()
+            End If
         End If
     End Sub
 

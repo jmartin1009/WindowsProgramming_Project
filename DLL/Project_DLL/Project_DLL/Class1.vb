@@ -40,29 +40,29 @@ Public Module Class1
     End Function
 
     'Handles showing the database table contents
-    'Contains code from Argo's example
-    Public Function fnShow(conString As String)
-        connectionCheck(conString)
-        Dim cmd = doCommand("Select * from tblEmployee")
-
-        'Fire the command using data adapter
-        Dim da As New OleDb.OleDbDataAdapter
-        da.SelectCommand = cmd
-
-        'Fill it in a temporary table
+    Public Function fnShow(sqlString As String, conString As String)
+        Dim con = New OleDbConnection(conString)
+        Dim cmd As New OleDb.OleDbCommand
         Dim dt As New DataTable
+        Dim da As New OleDb.OleDbDataAdapter(cmd)
         Try
+            cmd.Connection = con
+            cmd.CommandText = sqlString
+            con.Open()
             da.Fill(dt)
+
+            If dt.Rows.Count > 0 Then
+                Return dt
+            Else
+                Return dt
+            End If
         Catch ex As Exception
+            MsgBox(ex.Message)
         End Try
-
-
-        'Return the datatable the form will show
-        Return dt
-
     End Function
+
     'Handles deleting a row from the table based on ID entered
-    Public Sub fnDelete(userID As String, conString As String)
+    Public Sub fnDeleteOld(userID As String, conString As String)
         connectionCheck(conString)
         Dim cmd = doCommand("DELETE FROM tblEmployee WHERE empID='" & userID & "'")
         Try
@@ -74,6 +74,26 @@ Public Module Class1
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Public Function fnDelete(sqlString As String, conString As String)
+        Dim con = New OleDbConnection(conString)
+        Dim cmd As New OleDb.OleDbCommand
+        Try
+            cmd.Connection = con
+            cmd.CommandText = sqlString
+            con.Open()
+
+            Dim check = cmd.ExecuteNonQuery
+            If check < 0 Then
+                Return False
+            Else
+                Return True
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
 
     'Handles inserting data into a given table
     Public Function fnInsert(sqlString As String, conString As String)
