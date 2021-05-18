@@ -109,20 +109,26 @@
             MessageBox.Show("Select an order first.")
         Else
             Dim orderId As String = DataGridView1.SelectedRows(0).Cells(0).Value.ToString()
-            Dim orderDT As DataTable = Project_DLL.fnQuery("SELECT Ingredients.Ingredient_Name, Ingredients.Ingredient_Type_Name, Portion_Types.Portion_Type_Name, Num_Portions FROM (Orders_Ingredients_Combo INNER JOIN Ingredients On  Orders_Ingredients_Combo.Ingredient_ID = Ingredients.ID) INNER JOIN Portion_Types On Ingredients.Portion_Type_ID = Portion_Types.ID WHERE Orders_Ingredients_Combo.Order_ID = " & orderId & "", con)
-            Dim ingredList As List(Of Ingredient)
+            Dim orderDT As DataTable = Project_DLL.fnQuery("SELECT Ingredients.Ingredient_Name, Ingredient_Types.ID, Portion_Types.Portion_Type_Name, Num_Portions FROM ((Orders_Ingredients_Combo INNER JOIN Ingredients On  Orders_Ingredients_Combo.Ingredient_ID = Ingredients.ID) INNER JOIN Ingredient_Types ON Ingredients.Ingredient_Type_ID = Ingredient_Types.ID) INNER JOIN Portion_Types On Ingredients.Portion_Type_ID = Portion_Types.ID WHERE Orders_Ingredients_Combo.Order_ID = '" & orderId & "'", con)
+            Dim ingredList As List(Of Ingredient) = New List(Of Ingredient)
             For Each row As DataRow In orderDT.Rows
-                ingredList.Add(getIngredObj(row))
+                Dim ingred As Ingredient = getIngredObj(row)
+                ingredList.Add(ingred)
             Next
             For Each ingredient As Ingredient In ingredList
                 drinkActions = drinkActions & ingredient.AddToDrink() & vbCrLf
             Next
+
+            MessageBox.Show(drinkActions)
+            Dim sqlString As String = "UPDATE Orders SET Fulfilled = " & True & " WHERE [ID] = " & orderId & ""
+            Dim check As Boolean = Project_DLL.fnUpdate(sqlString, con)
         End If
-        MessageBox.Show(drinkActions)
+
+        showDataTable("SELECT ID, Customer_ID FROM Orders WHERE Fulfilled = " & False & " ")
     End Sub
 
     Private Function getIngredObj(row As DataRow)
-        Dim type As Int16 = 0
+        Dim type As Int32 = 0
         Dim name As String = ""
         Dim portion As String = ""
         name = row.ItemArray(0)
