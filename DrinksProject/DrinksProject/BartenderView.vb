@@ -88,8 +88,16 @@
     End Sub
 
     Private Sub btnDeleteOrder_Click(sender As Object, e As EventArgs) Handles btnDeleteOrder.Click
-        'Remove order row from table where selected
-        'Check if order selected
+        If (DataGridView1.SelectedCells.Count = 0) Then
+            MessageBox.Show("Select an order first.")
+        Else
+            Dim orderID As String = DataGridView1.SelectedRows(0).Cells(0).Value.ToString()
+            delete("DELETE FROM Orders WHERE ID =" & orderID & " ")
+            delete("DELETE FROM Orders_Ingredients_Combo WHERE Order_ID ='" & orderID & "'")
+
+            showDataTable("SELECT ID, Customer_ID FROM Orders WHERE Fulfilled = " & False & " ")
+            Me.Refresh()
+        End If
     End Sub
 
     Private Sub btnMakeDrink_Click(sender As Object, e As EventArgs) Handles btnMakeDrink.Click
