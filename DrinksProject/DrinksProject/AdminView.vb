@@ -78,7 +78,7 @@
         Else
             Dim ingredientName As String = DataGridView1.SelectedRows(0).Cells(0).Value.ToString()
             delete("DELETE FROM Ingredients WHERE Ingredient_Name ='" & ingredientName & "'")
-            showDataTable("SELECT Ingredient_Name, Ingredient_Type_Name FROM Ingredients INNER JOIN Ingredient_Types ON Ingredients.Ingredient_Type_ID = Ingredient_Types.ID")
+            showDataTable("SELECT Ingredient_Name, Ingredient_Type_Name FROM Ingredients INNER JOIN Ingredient_Types ON Ingredients.Ingredient_Type_ID = Ingredient_Types.ID ORDER BY Ingredient_Type_Name")
             Me.Refresh()
         End If
     End Sub
@@ -138,5 +138,11 @@
         newForm.Show()
     End Sub
 
-
+    Private Sub AdminView_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        If (btnAddIngredient.Visible = True) Then
+            DataGridView1.DataSource = Nothing
+            DataGridView1.Rows.Clear()
+            showDataTable("SELECT Ingredient_Name, Ingredient_Type_Name FROM Ingredients INNER JOIN Ingredient_Types ON Ingredients.Ingredient_Type_ID = Ingredient_Types.ID ORDER BY Ingredient_Type_Name")
+        End If
+    End Sub
 End Class

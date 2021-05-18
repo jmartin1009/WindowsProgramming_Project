@@ -1,12 +1,12 @@
 ﻿Public Class NewItem
-    Dim previous As AdminView 'Has to be set in the AdminView form thing
+    Dim previous As Form 'Has to be set in the AdminView form thing
     Public Property con As New String("Provider = Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\DrinksProjectDB.mdb")
 
-    Public Property previousForm() As AdminView
+    Public Property previousForm() As Form
         Get
             Return previous
         End Get
-        Set(ByVal value As AdminView)
+        Set(ByVal value As Form)
             previous = value
         End Set
     End Property

@@ -74,7 +74,10 @@
     End Sub
 
     Private Sub btnAddItem_Click(sender As Object, e As EventArgs) Handles btnAddItem.Click
-        'Open new item form
+        Dim newForm As NewItem = New NewItem()
+        newForm.previousForm = Me
+        Me.Hide()
+        newForm.Show()
     End Sub
 
     Private Sub BartenderView_Load(sender As Object, e As EventArgs) Handles MyBase.Load
