@@ -1,5 +1,7 @@
 ﻿Public Class NewItem
     Dim previous As AdminView 'Has to be set in the AdminView form thing
+    Public Property con As New String("Provider = Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|\DrinksProjectDB.mdb")
+
     Public Property previousForm() As AdminView
         Get
             Return previous
@@ -14,10 +16,30 @@
         Else
             'Check if the item exists already
             'If not
-            Dim type As String = cbItems.SelectedText
-            Dim portion As String = cbPortion.SelectedText
+            Dim type As String = cbItems.SelectedValue
+            Dim portion As String = cbPortion.SelectedValue
             Dim name As String = tbItem.Text
-            'Add to ingredients table
+            Dim sql As String = "SELECT * FROM Ingredients WHERE Ingredient_Name = '" & name & "'"
+            Dim itemCheck As DataTable = getData(sql)
+            If (itemCheck.Rows.Count > 0) Then
+                MessageBox.Show("Ingredient already exists. Please enter a new ingredient")
+            Else
+                sql = "SELECT [ID] FROM Portion_Types WHERE Portion_Type_Name = '" & portion & "'"
+                Dim portionDT As DataTable = getData(sql)
+                Dim portionID As Int16 = portionDT.Rows(0).ItemArray(0).ToString()
+                sql = "SELECT [ID] FROM Ingredient_Types WHERE Ingredient_Type_Name = '" & type & "'"
+                Dim ingredDT As DataTable = getData(sql)
+                Dim ingredID As Int16 = ingredDT.Rows(0).ItemArray(0).ToString()
+                sql = "INSERT INTO Ingredients (Ingredient_Name, Portion_Type_ID, Ingredient_Type_ID) VALUES ('" & name & "', " & portionID & ", " & ingredID & ")"
+                Dim insertCheck As Boolean = Project_DLL.fnInsert(sql, con)
+                If insertCheck Then
+                    MessageBox.Show("Ingredient successfully added.")
+                    tbItem.Text = "Name"
+                    Me.Refresh()
+                Else
+                    MessageBox.Show("Error adding ingredient. Please try again.")
+                End If
+            End If
         End If
 
     End Sub
@@ -35,4 +57,21 @@
         previous.Show()
         Me.Finalize()
     End Sub
+
+    Private Sub NewItem_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim sqlString As String = "SELECT Ingredient_Type_Name FROM Ingredient_Types"
+        cbItems.DataSource = getData(sqlString)
+        cbItems.DisplayMember = "Ingredient_Type_Name"
+        cbItems.ValueMember = "Ingredient_Type_Name"
+        sqlString = "SELECT Portion_Type_Name FROM Portion_Types"
+        cbPortion.DataSource = getData(sqlString)
+        cbPortion.DisplayMember = "Portion_Type_Name"
+        cbPortion.ValueMember = "Portion_Type_Name"
+        Me.Refresh()
+    End Sub
+
+    Public Function getData(sql As String)
+        Dim data As DataTable = Project_DLL.fnQuery(sql, con)
+        Return data
+    End Function
 End Class

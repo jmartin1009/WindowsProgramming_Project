@@ -154,6 +154,7 @@ Public Module Class1
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
+            Return ex
         End Try
     End Function
 

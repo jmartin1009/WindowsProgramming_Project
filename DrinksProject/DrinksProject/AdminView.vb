@@ -46,7 +46,7 @@
 
     Private Sub btnManageIngredients_Click(sender As Object, e As EventArgs) Handles btnManageIngredients.Click
         'Fill datagridview with data
-        showDataTable("SELECT Ingredient_Name, Ingredient_Type_Name FROM Ingredients INNER JOIN Ingredient_Types ON Ingredients.Ingredient_Type_ID = Ingredient_Types.ID")
+        showDataTable("SELECT Ingredient_Name, Ingredient_Type_Name FROM Ingredients INNER JOIN Ingredient_Types ON Ingredients.Ingredient_Type_ID = Ingredient_Types.ID ORDER BY Ingredient_Type_Name")
 
         If (btnDeleteUser.Visible) Then
             btnDeleteUser.Visible = False
@@ -132,7 +132,10 @@
     End Sub
 
     Private Sub btnAddIngredient_Click(sender As Object, e As EventArgs) Handles btnAddIngredient.Click
-
+        Dim newForm As NewItem = New NewItem()
+        newForm.previousForm = Me
+        Me.Hide()
+        newForm.Show()
     End Sub
 
 

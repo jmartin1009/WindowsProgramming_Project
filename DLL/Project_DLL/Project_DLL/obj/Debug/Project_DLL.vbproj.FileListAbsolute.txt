@@ -8,3 +8,13 @@ D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\
 D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DLL\Project_DLL\Project_DLL\obj\Debug\Project_DLL.xml
 D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DLL\Project_DLL\Project_DLL\obj\Debug\Project_DLL.pdb
 D:\Greg\Desktop\CS3340 - Windows Programming\Project\WindowsProgramming_Project\DLL\Project_DLL\Project_DLL\obj\Debug\Project_DLL.vbprojAssemblyReference.cache
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DLL\Project_DLL\Project_DLL\bin\Debug\Project_DLL.dll
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DLL\Project_DLL\Project_DLL\bin\Debug\Project_DLL.pdb
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DLL\Project_DLL\Project_DLL\bin\Debug\Project_DLL.xml
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DLL\Project_DLL\Project_DLL\obj\Debug\Project_DLL.vbprojAssemblyReference.cache
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DLL\Project_DLL\Project_DLL\obj\Debug\Project_DLL.Resources.resources
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DLL\Project_DLL\Project_DLL\obj\Debug\Project_DLL.vbproj.GenerateResource.cache
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DLL\Project_DLL\Project_DLL\obj\Debug\Project_DLL.vbproj.CoreCompileInputs.cache
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DLL\Project_DLL\Project_DLL\obj\Debug\Project_DLL.dll
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DLL\Project_DLL\Project_DLL\obj\Debug\Project_DLL.xml
+C:\Users\jaele\Desktop\Programming\Programming Stuff\WindowsProgramming\Project\WindowsProgramming_Project\DLL\Project_DLL\Project_DLL\obj\Debug\Project_DLL.pdb
