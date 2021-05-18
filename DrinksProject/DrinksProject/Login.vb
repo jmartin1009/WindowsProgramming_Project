@@ -44,7 +44,7 @@
     End Sub
 
     Private Sub btnChangePW_Click(sender As Object, e As EventArgs) Handles btnChangePW.Click
-        If (tbUsername.Text = "" Or tbPassword.Text = "" Or tbUsername.Text = "Username") Then
+        If (tbUsername.Text = "" Or tbUsername.Text = "Username") Then
             MessageBox.Show("Please enter a username.")
         Else
             Dim sqlString As String = "SELECT Username FROM Users WHERE Username = '" & tbUsername.Text & "' "

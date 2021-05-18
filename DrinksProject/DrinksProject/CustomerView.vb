@@ -44,7 +44,9 @@
         If (dgvDrink.SelectedRows.Count = 0) Then
             MessageBox.Show("Select an ingredient first.")
         Else
-            Dim ingredient As String = dgvDrink.SelectedRows(0).Cells(0).Value.ToString()
+            Dim ingredient As Integer = dgvDrink.SelectedRows(0).Index
+            dgvDrink.Rows.RemoveAt(ingredient)
+            Me.Refresh()
         End If
     End Sub
 
@@ -52,7 +54,7 @@
         If (cbIngredientTypes.SelectedIndex < 0 Or cbPortions.SelectedIndex < 0) Then
             MessageBox.Show("Select an ingredient first.")
         Else
-            dgvDrink.Rows.Add(cbIngredientTypes.SelectedValue, cbPortions.SelectedValue)
+            dgvDrink.Rows.Add(cbIngredientTypes.SelectedValue, (cbPortions.SelectedIndex + 1))
         End If
     End Sub
 
@@ -67,7 +69,7 @@
 
         Me.Text = "" & Me.person.Username & " -- Customer"
 
-        Dim sqlString As String = "SELECT Ingredient_Name FROM Ingredients"
+        Dim sqlString As String = "SELECT Ingredient_Name FROM Ingredients ORDER BY Ingredient_Type_ID"
         cbIngredientTypes.DataSource = getData(sqlString)
         cbIngredientTypes.DisplayMember = "Ingredient_Name"
         cbIngredientTypes.ValueMember = "Ingredient_Name"
@@ -81,7 +83,29 @@
     End Function
 
     Private Sub btnMakeDrink_Click(sender As Object, e As EventArgs) Handles btnOrderDrink.Click
-        'Remove order from table where selected, output all the fun stuff
+        Dim sql As String = "SELECT [ID] FROM USERS WHERE [Username] = '" & Me.person.Username & "'"
+        Dim personIDDT As DataTable = Project_DLL.fnQuery(sql, con)
+        Dim personID As Integer = personIDDT.Rows(0).ItemArray(0)
+        sql = "INSERT INTO Orders (Customer_ID, Fulfilled) VALUES (" & personID & ", " & False & ")"
+        Dim insertCheck As Boolean = Project_DLL.fnInsert(sql, con)
+        If Not insertCheck Then
+            MessageBox.Show("Order not entered.Please try again")
+        Else
+            System.Threading.Thread.Sleep(500)
+            sql = "SELECT [ID] FROM Orders WHERE Customer_ID = " & personID & " AND Fulfilled = " & False & " ORDER BY [ID] DESC"
+            Dim orderDT As DataTable = Project_DLL.fnQuery(sql, con)
+            Dim orderID As Integer = orderDT.Rows(0).ItemArray(0)
+            For Each ingredient As DataGridViewRow In dgvDrink.Rows
+                Dim name As String = ingredient.Cells(0).Value.ToString()
+                Dim portions As Integer = ingredient.Cells(1).Value
+                sql = "SELECT [ID] FROM Ingredients WHERE Ingredient_Name = '" & name & "'"
+                Dim ingredDT As DataTable = Project_DLL.fnQuery(sql, con)
+                Dim ingredID As Integer = ingredDT.Rows(0).ItemArray(0)
+                sql = "INSERT INTO Orders_Ingredients_Combo (Order_ID, Ingredient_ID, Num_Portions) VALUES (" & orderID & ", " & ingredID & ", " & portions & ")"
+                insertCheck = Project_DLL.fnInsert(sql, con)
+            Next
+            dgvDrink.Rows.Clear()
+        End If
     End Sub
 
     Private Sub cbIngredientTypes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbIngredientTypes.SelectedIndexChanged

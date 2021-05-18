@@ -23,11 +23,10 @@
     Private Sub btnManageInv_Click(sender As Object, e As EventArgs) Handles btnManageInv.Click
         showDataTable("SELECT Ingredient_Name, Ingredient_Type_Name FROM Ingredients INNER JOIN Ingredient_Types ON Ingredients.Ingredient_Type_ID = Ingredient_Types.ID")
 
-        'Load datagrid view with all usernames and user types
-        If (btnDeleteOrder.Visible) Then
-            btnDeleteOrder.Visible = False
-            btnMakeDrink.Visible = False
-        End If
+
+        btnDeleteOrder.Visible = False
+        btnMakeDrink.Visible = False
+        btnViewOrder.Visible = False
         btnDeleteItem.Visible = True
         btnAddItem.Visible = True
         Me.Refresh()
@@ -123,8 +122,10 @@
             Dim sqlString As String = "UPDATE Orders SET Fulfilled = " & True & " WHERE [ID] = " & orderId & ""
             Dim check As Boolean = Project_DLL.fnUpdate(sqlString, con)
         End If
-
-        showDataTable("SELECT ID, Customer_ID FROM Orders WHERE Fulfilled = " & False & " ")
+        DataGridView1.DataSource = Nothing
+        DataGridView1.Rows.Clear()
+        Me.Refresh()
+        'showDataTable("SELECT ID, Customer_ID FROM Orders WHERE Fulfilled = " & False & " ")
     End Sub
 
     Private Function getIngredObj(row As DataRow)
@@ -179,6 +180,7 @@
             Me.Refresh()
         End If
 
+        btnMakeDrink.Visible = False
         btnDeleteOrder.Visible = False
         btnViewOrder.Visible = False
         btnMakeDrink.Visible = True

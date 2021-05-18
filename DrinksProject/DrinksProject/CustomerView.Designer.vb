@@ -44,23 +44,23 @@ Partial Class CustomerView
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(263, 35)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
+        Me.DataGridView1.Location = New System.Drawing.Point(351, 43)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(399, 240)
+        Me.DataGridView1.Size = New System.Drawing.Size(532, 295)
         Me.DataGridView1.TabIndex = 0
         '
         'btnPastOrders
         '
         Me.btnPastOrders.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPastOrders.Location = New System.Drawing.Point(53, 176)
-        Me.btnPastOrders.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnPastOrders.Location = New System.Drawing.Point(71, 217)
+        Me.btnPastOrders.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnPastOrders.Name = "btnPastOrders"
-        Me.btnPastOrders.Size = New System.Drawing.Size(160, 32)
+        Me.btnPastOrders.Size = New System.Drawing.Size(213, 39)
         Me.btnPastOrders.TabIndex = 2
         Me.btnPastOrders.Text = "View Past Orders"
         Me.btnPastOrders.UseVisualStyleBackColor = True
@@ -68,10 +68,10 @@ Partial Class CustomerView
         'btnDeleteItem
         '
         Me.btnDeleteItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDeleteItem.Location = New System.Drawing.Point(263, 305)
-        Me.btnDeleteItem.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnDeleteItem.Location = New System.Drawing.Point(351, 375)
+        Me.btnDeleteItem.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnDeleteItem.Name = "btnDeleteItem"
-        Me.btnDeleteItem.Size = New System.Drawing.Size(111, 38)
+        Me.btnDeleteItem.Size = New System.Drawing.Size(148, 47)
         Me.btnDeleteItem.TabIndex = 4
         Me.btnDeleteItem.Text = "Delete Item"
         Me.btnDeleteItem.UseVisualStyleBackColor = True
@@ -82,30 +82,30 @@ Partial Class CustomerView
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HomeMenu, Me.ExitMenu})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
-        Me.MenuStrip1.Size = New System.Drawing.Size(699, 24)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(932, 28)
         Me.MenuStrip1.TabIndex = 10
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'HomeMenu
         '
         Me.HomeMenu.Name = "HomeMenu"
-        Me.HomeMenu.Size = New System.Drawing.Size(52, 20)
+        Me.HomeMenu.Size = New System.Drawing.Size(64, 24)
         Me.HomeMenu.Text = "Home"
         '
         'ExitMenu
         '
         Me.ExitMenu.Name = "ExitMenu"
-        Me.ExitMenu.Size = New System.Drawing.Size(38, 20)
+        Me.ExitMenu.Size = New System.Drawing.Size(47, 24)
         Me.ExitMenu.Text = "Exit"
         '
         'btnAddItem
         '
         Me.btnAddItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddItem.Location = New System.Drawing.Point(409, 305)
-        Me.btnAddItem.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnAddItem.Location = New System.Drawing.Point(545, 375)
+        Me.btnAddItem.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnAddItem.Name = "btnAddItem"
-        Me.btnAddItem.Size = New System.Drawing.Size(111, 38)
+        Me.btnAddItem.Size = New System.Drawing.Size(148, 47)
         Me.btnAddItem.TabIndex = 12
         Me.btnAddItem.Text = "Add Item"
         Me.btnAddItem.UseVisualStyleBackColor = True
@@ -113,10 +113,10 @@ Partial Class CustomerView
         'btnOrderDrink
         '
         Me.btnOrderDrink.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnOrderDrink.Location = New System.Drawing.Point(551, 306)
-        Me.btnOrderDrink.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnOrderDrink.Location = New System.Drawing.Point(735, 377)
+        Me.btnOrderDrink.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnOrderDrink.Name = "btnOrderDrink"
-        Me.btnOrderDrink.Size = New System.Drawing.Size(111, 37)
+        Me.btnOrderDrink.Size = New System.Drawing.Size(148, 46)
         Me.btnOrderDrink.TabIndex = 14
         Me.btnOrderDrink.Text = "Order Drink"
         Me.btnOrderDrink.UseVisualStyleBackColor = True
@@ -125,10 +125,10 @@ Partial Class CustomerView
         '
         Me.cbIngredientTypes.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbIngredientTypes.FormattingEnabled = True
-        Me.cbIngredientTypes.Location = New System.Drawing.Point(52, 83)
-        Me.cbIngredientTypes.Margin = New System.Windows.Forms.Padding(2)
+        Me.cbIngredientTypes.Location = New System.Drawing.Point(69, 102)
+        Me.cbIngredientTypes.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbIngredientTypes.Name = "cbIngredientTypes"
-        Me.cbIngredientTypes.Size = New System.Drawing.Size(161, 28)
+        Me.cbIngredientTypes.Size = New System.Drawing.Size(213, 33)
         Me.cbIngredientTypes.TabIndex = 15
         Me.cbIngredientTypes.Text = "Ingredients"
         '
@@ -137,21 +137,23 @@ Partial Class CustomerView
         Me.dgvDrink.AllowUserToAddRows = False
         Me.dgvDrink.AllowUserToDeleteRows = False
         Me.dgvDrink.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDrink.Location = New System.Drawing.Point(33, 256)
-        Me.dgvDrink.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgvDrink.Location = New System.Drawing.Point(44, 315)
+        Me.dgvDrink.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.dgvDrink.Name = "dgvDrink"
+        Me.dgvDrink.RowHeadersVisible = False
         Me.dgvDrink.RowHeadersWidth = 51
         Me.dgvDrink.RowTemplate.Height = 24
-        Me.dgvDrink.Size = New System.Drawing.Size(180, 122)
+        Me.dgvDrink.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvDrink.Size = New System.Drawing.Size(240, 150)
         Me.dgvDrink.TabIndex = 16
         '
         'btnViewOrder
         '
         Me.btnViewOrder.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnViewOrder.Location = New System.Drawing.Point(53, 176)
-        Me.btnViewOrder.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnViewOrder.Location = New System.Drawing.Point(71, 217)
+        Me.btnViewOrder.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnViewOrder.Name = "btnViewOrder"
-        Me.btnViewOrder.Size = New System.Drawing.Size(160, 32)
+        Me.btnViewOrder.Size = New System.Drawing.Size(213, 39)
         Me.btnViewOrder.TabIndex = 17
         Me.btnViewOrder.Text = "View Order"
         Me.btnViewOrder.UseVisualStyleBackColor = True
@@ -161,18 +163,18 @@ Partial Class CustomerView
         Me.cbPortions.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbPortions.FormattingEnabled = True
         Me.cbPortions.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        Me.cbPortions.Location = New System.Drawing.Point(52, 115)
-        Me.cbPortions.Margin = New System.Windows.Forms.Padding(2)
+        Me.cbPortions.Location = New System.Drawing.Point(69, 142)
+        Me.cbPortions.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.cbPortions.Name = "cbPortions"
-        Me.cbPortions.Size = New System.Drawing.Size(161, 28)
+        Me.cbPortions.Size = New System.Drawing.Size(213, 33)
         Me.cbPortions.TabIndex = 18
         Me.cbPortions.Text = "Portions"
         '
         'CustomerView
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(699, 409)
+        Me.ClientSize = New System.Drawing.Size(932, 503)
         Me.Controls.Add(Me.cbPortions)
         Me.Controls.Add(Me.btnViewOrder)
         Me.Controls.Add(Me.dgvDrink)
@@ -183,7 +185,7 @@ Partial Class CustomerView
         Me.Controls.Add(Me.btnDeleteItem)
         Me.Controls.Add(Me.btnPastOrders)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "CustomerView"
         Me.Text = "CustomerView"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
