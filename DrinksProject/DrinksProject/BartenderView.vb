@@ -104,15 +104,72 @@
     End Sub
 
     Private Sub btnMakeDrink_Click(sender As Object, e As EventArgs) Handles btnMakeDrink.Click
-        'Remove order from table where selected, output all the fun stuff
+        Dim drinkActions As String = ""
+        If (DataGridView1.SelectedCells.Count = 0) Then
+            MessageBox.Show("Select an order first.")
+        Else
+            Dim orderId As String = DataGridView1.SelectedRows(0).Cells(0).Value.ToString()
+            Dim orderDT As DataTable = Project_DLL.fnQuery("SELECT Ingredients.Ingredient_Name, Ingredients.Ingredient_Type_Name, Portion_Types.Portion_Type_Name, Num_Portions FROM (Orders_Ingredients_Combo INNER JOIN Ingredients On  Orders_Ingredients_Combo.Ingredient_ID = Ingredients.ID) INNER JOIN Portion_Types On Ingredients.Portion_Type_ID = Portion_Types.ID WHERE Orders_Ingredients_Combo.Order_ID = " & orderId & "", con)
+            Dim ingredList As List(Of Ingredient)
+            For Each row As DataRow In orderDT.Rows
+                ingredList.Add(getIngredObj(row))
+            Next
+            For Each ingredient As Ingredient In ingredList
+                drinkActions = drinkActions & ingredient.AddToDrink() & vbCrLf
+            Next
+        End If
+        MessageBox.Show(drinkActions)
     End Sub
+
+    Private Function getIngredObj(row As DataRow)
+        Dim type As Int16 = 0
+        Dim name As String = ""
+        Dim portion As String = ""
+        name = row.ItemArray(0)
+        type = row.ItemArray(1)
+        portion = row.ItemArray(2)
+        Dim ingred As Ingredient
+        Select Case type
+            Case 1
+                ingred = New Spirit(name, portion)
+            Case 2
+                ingred = New Liquer(name, portion)
+            Case 3
+                ingred = New Beer(name, portion)
+            Case 4
+                ingred = New Wine(name, portion)
+            Case 5
+                ingred = New Beverage(name, portion)
+            Case 6
+                ingred = New Juice(name, portion)
+            Case 7
+                ingred = New Fruit(name, portion)
+            Case 8
+                ingred = New Sweetener(name, portion)
+            Case 9
+                ingred = New Dairy(name, portion)
+            Case 10
+                ingred = New Vegetable(name, portion)
+            Case 11
+                ingred = New Condiment(name, portion)
+            Case 12
+                ingred = New Bitter(name, portion)
+            Case 13
+                ingred = New Spice(name, portion)
+            Case 14
+                ingred = New Herb(name, portion)
+            Case 15
+                ingred = New Extract(name, portion)
+        End Select
+        Return ingred
+    End Function
 
     Private Sub btnViewOrder_Click(sender As Object, e As EventArgs) Handles btnViewOrder.Click
         If (DataGridView1.SelectedCells.Count = 0) Then
             MessageBox.Show("Select an order first.")
         Else
             Dim orderId As String = DataGridView1.SelectedRows(0).Cells(0).Value.ToString()
-            showDataTable("SELECT Ingredients.Ingredient_Name, Num_Portions, Portion_Types.Portion_Type_Name FROM (Orders_Ingredients_Combo INNER JOIN Ingredients ON  Orders_Ingredients_Combo.Ingredient_ID = Ingredients.ID) INNER JOIN Portion_Types ON Ingredients.Portion_Type_ID = Portion_Types.ID WHERE Orders_Ingredients_Combo.Order_ID = '" & orderId & "'")
+            showDataTable("SELECT Order_ID, Ingredients.Ingredient_Name, Num_Portions, Portion_Types.Portion_Type_Name FROM (Orders_Ingredients_Combo INNER JOIN Ingredients ON  Orders_Ingredients_Combo.Ingredient_ID = Ingredients.ID) INNER JOIN Portion_Types ON Ingredients.Portion_Type_ID = Portion_Types.ID WHERE Orders_Ingredients_Combo.Order_ID = '" & orderId & "'")
             Me.Refresh()
         End If
 
@@ -120,5 +177,13 @@
         btnViewOrder.Visible = False
         btnMakeDrink.Visible = True
         Me.Refresh()
+    End Sub
+
+    Private Sub BartenderView_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        If (btnAddItem.Visible = True) Then
+            DataGridView1.DataSource = Nothing
+            DataGridView1.Rows.Clear()
+            showDataTable("SELECT Ingredient_Name, Ingredient_Type_Name FROM Ingredients INNER JOIN Ingredient_Types ON Ingredients.Ingredient_Type_ID = Ingredient_Types.ID ORDER BY Ingredient_Type_Name")
+        End If
     End Sub
 End Class
