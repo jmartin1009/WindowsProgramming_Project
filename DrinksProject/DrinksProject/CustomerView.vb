@@ -49,10 +49,10 @@
     End Sub
 
     Private Sub btnAddItem_Click(sender As Object, e As EventArgs) Handles btnAddItem.Click
-        If (DataGridView1.SelectedRows.Count = 0) Then
+        If (cbIngredientTypes.SelectedIndex < 0 Or cbPortions.SelectedIndex < 0) Then
             MessageBox.Show("Select an ingredient first.")
         Else
-            Dim ingredient As String = DataGridView1.SelectedRows(0).Cells(0).Value.ToString()
+            dgvDrink.Rows.Add(cbIngredientTypes.SelectedValue, cbPortions.SelectedValue)
         End If
     End Sub
 
@@ -62,9 +62,23 @@
         btnOrderDrink.Visible = False
         btnViewOrder.Visible = False
         dgvDrink.Visible = False
+        dgvDrink.Columns.Add(0, "Ingredient Name")
+        dgvDrink.Columns.Add(0, "Portions")
+
         Me.Text = "" & Me.person.Username & " -- Customer"
+
+        Dim sqlString As String = "SELECT Ingredient_Name FROM Ingredients"
+        cbIngredientTypes.DataSource = getData(sqlString)
+        cbIngredientTypes.DisplayMember = "Ingredient_Name"
+        cbIngredientTypes.ValueMember = "Ingredient_Name"
+
         Me.Refresh()
     End Sub
+
+    Public Function getData(sql As String)
+        Dim data As DataTable = Project_DLL.fnQuery(sql, con)
+        Return data
+    End Function
 
     Private Sub btnMakeDrink_Click(sender As Object, e As EventArgs) Handles btnOrderDrink.Click
         'Remove order from table where selected, output all the fun stuff
@@ -87,4 +101,5 @@
             Me.Refresh()
         End If
     End Sub
+
 End Class

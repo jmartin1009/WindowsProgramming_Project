@@ -38,18 +38,20 @@ Partial Class NewItem
         '
         Me.cbItems.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbItems.FormattingEnabled = True
-        Me.cbItems.Location = New System.Drawing.Point(39, 169)
+        Me.cbItems.Location = New System.Drawing.Point(29, 137)
+        Me.cbItems.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cbItems.Name = "cbItems"
-        Me.cbItems.Size = New System.Drawing.Size(194, 33)
+        Me.cbItems.Size = New System.Drawing.Size(146, 28)
         Me.cbItems.TabIndex = 0
         Me.cbItems.Text = "Ingredient Types"
         '
         'btnAddItem
         '
         Me.btnAddItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddItem.Location = New System.Drawing.Point(554, 200)
+        Me.btnAddItem.Location = New System.Drawing.Point(416, 162)
+        Me.btnAddItem.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnAddItem.Name = "btnAddItem"
-        Me.btnAddItem.Size = New System.Drawing.Size(194, 30)
+        Me.btnAddItem.Size = New System.Drawing.Size(146, 24)
         Me.btnAddItem.TabIndex = 1
         Me.btnAddItem.Text = "Add Item"
         Me.btnAddItem.UseVisualStyleBackColor = True
@@ -58,18 +60,20 @@ Partial Class NewItem
         '
         Me.lblAdd.AutoSize = True
         Me.lblAdd.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAdd.Location = New System.Drawing.Point(207, 44)
+        Me.lblAdd.Location = New System.Drawing.Point(155, 36)
+        Me.lblAdd.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAdd.Name = "lblAdd"
-        Me.lblAdd.Size = New System.Drawing.Size(368, 46)
+        Me.lblAdd.Size = New System.Drawing.Size(298, 37)
         Me.lblAdd.TabIndex = 2
         Me.lblAdd.Text = "Add New Ingredient"
         '
         'tbItem
         '
         Me.tbItem.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbItem.Location = New System.Drawing.Point(291, 200)
+        Me.tbItem.Location = New System.Drawing.Point(218, 162)
+        Me.tbItem.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tbItem.Name = "tbItem"
-        Me.tbItem.Size = New System.Drawing.Size(194, 30)
+        Me.tbItem.Size = New System.Drawing.Size(146, 26)
         Me.tbItem.TabIndex = 3
         Me.tbItem.Text = "Name"
         '
@@ -77,9 +81,10 @@ Partial Class NewItem
         '
         Me.cbPortion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbPortion.FormattingEnabled = True
-        Me.cbPortion.Location = New System.Drawing.Point(39, 231)
+        Me.cbPortion.Location = New System.Drawing.Point(29, 188)
+        Me.cbPortion.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.cbPortion.Name = "cbPortion"
-        Me.cbPortion.Size = New System.Drawing.Size(194, 33)
+        Me.cbPortion.Size = New System.Drawing.Size(146, 28)
         Me.cbPortion.TabIndex = 4
         Me.cbPortion.Text = "Portions"
         '
@@ -89,37 +94,39 @@ Partial Class NewItem
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HomeMenu, Me.ExitMenu})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(800, 28)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(600, 24)
         Me.MenuStrip1.TabIndex = 11
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'HomeMenu
         '
         Me.HomeMenu.Name = "HomeMenu"
-        Me.HomeMenu.Size = New System.Drawing.Size(64, 24)
+        Me.HomeMenu.Size = New System.Drawing.Size(52, 20)
         Me.HomeMenu.Text = "Home"
         '
         'ExitMenu
         '
         Me.ExitMenu.Name = "ExitMenu"
-        Me.ExitMenu.Size = New System.Drawing.Size(47, 24)
+        Me.ExitMenu.Size = New System.Drawing.Size(38, 20)
         Me.ExitMenu.Text = "Exit"
         '
         'btnReturn
         '
         Me.btnReturn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReturn.Location = New System.Drawing.Point(665, 44)
+        Me.btnReturn.Location = New System.Drawing.Point(499, 36)
+        Me.btnReturn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnReturn.Name = "btnReturn"
-        Me.btnReturn.Size = New System.Drawing.Size(100, 33)
+        Me.btnReturn.Size = New System.Drawing.Size(75, 27)
         Me.btnReturn.TabIndex = 12
         Me.btnReturn.Text = "Return"
         Me.btnReturn.UseVisualStyleBackColor = True
         '
         'NewItem
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(600, 366)
         Me.Controls.Add(Me.btnReturn)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.cbPortion)
@@ -127,6 +134,7 @@ Partial Class NewItem
         Me.Controls.Add(Me.lblAdd)
         Me.Controls.Add(Me.btnAddItem)
         Me.Controls.Add(Me.cbItems)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "NewItem"
         Me.Text = "NewItem"
         Me.MenuStrip1.ResumeLayout(False)

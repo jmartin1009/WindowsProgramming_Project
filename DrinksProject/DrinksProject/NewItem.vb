@@ -74,4 +74,8 @@
         Dim data As DataTable = Project_DLL.fnQuery(sql, con)
         Return data
     End Function
+
+    Private Sub cbItems_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbItems.SelectedIndexChanged
+
+    End Sub
 End Class

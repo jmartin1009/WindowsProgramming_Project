@@ -33,6 +33,7 @@ Partial Class CustomerView
         Me.cbIngredientTypes = New System.Windows.Forms.ComboBox()
         Me.dgvDrink = New System.Windows.Forms.DataGridView()
         Me.btnViewOrder = New System.Windows.Forms.Button()
+        Me.cbPortions = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvDrink, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -124,11 +125,12 @@ Partial Class CustomerView
         '
         Me.cbIngredientTypes.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbIngredientTypes.FormattingEnabled = True
-        Me.cbIngredientTypes.Location = New System.Drawing.Point(53, 102)
+        Me.cbIngredientTypes.Location = New System.Drawing.Point(52, 83)
         Me.cbIngredientTypes.Margin = New System.Windows.Forms.Padding(2)
         Me.cbIngredientTypes.Name = "cbIngredientTypes"
         Me.cbIngredientTypes.Size = New System.Drawing.Size(161, 28)
         Me.cbIngredientTypes.TabIndex = 15
+        Me.cbIngredientTypes.Text = "Ingredients"
         '
         'dgvDrink
         '
@@ -154,11 +156,24 @@ Partial Class CustomerView
         Me.btnViewOrder.Text = "View Order"
         Me.btnViewOrder.UseVisualStyleBackColor = True
         '
+        'cbPortions
+        '
+        Me.cbPortions.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbPortions.FormattingEnabled = True
+        Me.cbPortions.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
+        Me.cbPortions.Location = New System.Drawing.Point(52, 115)
+        Me.cbPortions.Margin = New System.Windows.Forms.Padding(2)
+        Me.cbPortions.Name = "cbPortions"
+        Me.cbPortions.Size = New System.Drawing.Size(161, 28)
+        Me.cbPortions.TabIndex = 18
+        Me.cbPortions.Text = "Portions"
+        '
         'CustomerView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(699, 409)
+        Me.Controls.Add(Me.cbPortions)
         Me.Controls.Add(Me.btnViewOrder)
         Me.Controls.Add(Me.dgvDrink)
         Me.Controls.Add(Me.cbIngredientTypes)
@@ -191,4 +206,5 @@ Partial Class CustomerView
     Friend WithEvents cbIngredientTypes As ComboBox
     Friend WithEvents dgvDrink As DataGridView
     Friend WithEvents btnViewOrder As Button
+    Friend WithEvents cbPortions As ComboBox
 End Class
